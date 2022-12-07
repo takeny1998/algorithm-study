@@ -1,7 +1,5 @@
-# algorithm-study
-
 ## Pull requests Role
-[week_no] (Problem Name)
+__[week_no] (Problem Name)__  
 Ex. [week 1] baekjoon-13565
 
 ## Problem List
