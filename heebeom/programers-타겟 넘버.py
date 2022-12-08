@@ -1,26 +1,19 @@
-from itertools import product
-
-def cal(numbers, signs):
-    result = 0
-
-    for i in range(len(numbers)):
-        if signs[i] == 0:
-            result += numbers[i]
-        else:
-            result += (numbers[i] * -1)
+def dfs(idx, val, numbers, target):
+    global answer
+    if idx == len(numbers):
+        if val == target:
+            answer += 1
+        return
     
-    return result
+    dfs(idx + 1, val + numbers[idx], numbers, target)
+    dfs(idx + 1, val - numbers[idx], numbers, target)
 
 
 def solution(numbers, target):
+    global answer
 
     answer = 0
-
-    for signs in product([0, 1], repeat = len(numbers)):
-        if cal(numbers, signs) == target:
-            answer += 1
-
+    
+    dfs(0, 0, numbers, target)
     print(answer)
     return answer
-
-solution([4, 1, 2, 1], 4)
