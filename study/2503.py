@@ -12,8 +12,7 @@ for _ in range(t):
     # 세자리의 숫자 조합 리스트 하나씩 반복
     for i in range(len(num)):
         s, b = 0, 0
-        print(i)
-        # i -= removed
+        i -= removed
         # 입력받은 숫자를 한자리씩 반복
         for j in range(3):
             q[j] = int(q[j])
@@ -29,5 +28,5 @@ for _ in range(t):
         if s != strlike or b != ball:  
             num.remove(num[i])
             # 달라진 리스트 길이를 이해 removed
-            # removed += 1  
+            removed += 1  
 print(len(num))
