@@ -2,19 +2,24 @@
 # 1이상 1000이하일때 가능
 from collections import deque
 
-numbers = [1, 1, 1, 1, 1]
-visited = [False] * len(numbers)
-target = 3
-print(visited)
+numbers = [1, 2, 3, 4, 5]
 
-def bfs(index):
-    visited[index] = True
-    current = numbers[index]
-    
+target = 3
+
+def dfs(idx, result):
+    visited = [False] * len(numbers)
+    stack = []
+
     for cal in "-","+":
-        index += 1
-        after = eval(str(current)+cal+str(numbers[index]))
-        print(after)
-        if after <= 0 or after >= 1000:
-            continue
-        if not visited[index]
+        totalNum += int(cal+str(numbers[index]))
+        # if index == (len(numbers)-1):
+        dfs(string)
+        dfs(string) 
+        # print("cal+number[index]: ",cal,numbers[index])
+        # print("total: ",totalNum)
+        # if not visited[index]:
+        #     dfs(totalNum, index+1)
+    # print(total)
+
+total = ""
+dfs(0,0)
