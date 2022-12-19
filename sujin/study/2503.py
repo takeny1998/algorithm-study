@@ -1,7 +1,6 @@
 from itertools import permutations
 # 모든 세자리의 숫자 조합 리스트
 num = list(permutations((1, 2, 3, 4, 5, 6, 7, 8, 9), 3))  
-
 t = int(input())
 for _ in range(t):
     q, strlike, ball = map(int, input().split())
