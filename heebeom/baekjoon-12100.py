@@ -1,6 +1,7 @@
 # 상, 하, 좌, 우
 dyx = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
+
 def move(direct:int):
     visited:list[list[bool]] = [[False for _ in range(N)] for _ in range(N)]
     next_field:list[list[int]] = [line[:] for line in field]
@@ -38,23 +39,22 @@ def move(direct:int):
                         visited[ny][nx] = True
                         next_field[ny][nx] *= 2
                         next_field[cy][cx] = 0
+    return next_field
 
-    return next_field, max(map(max, next_field))
 
-
-def dfs(biggest, depth):
+def dfs(depth):
     global field, answer
 
     if depth == 5:
-        answer = max(answer, biggest)
+        answer = max(answer, max(map(max, field)))
         return
 
     for direction in range(4):
-        field_copy, biggest_copy = [line[:] for line in field], biggest
-        field, biggest = move(direction)
+        field_copy = [line[:] for line in field]
+        field = move(direction)
         
-        dfs(biggest, depth + 1)
-        field, biggest = field_copy, biggest_copy
+        dfs(depth + 1)
+        field = field_copy
 
 
 N:int = int(input())
@@ -64,5 +64,5 @@ answer:int = -1
 for _ in range(N):
     field.append(list(map(int, input().split())))
 
-dfs(0, 0)
+dfs(0)
 print(answer)
