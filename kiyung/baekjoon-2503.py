@@ -19,5 +19,5 @@ for i in range(n):
         if (strike != s ) or (ball != b): # strike나 ball의 수가 맞지 않을 때는 해당 수를 제거
             li.remove(li[j])
             c += 1
-    
-print(len(li))
+     
+print(len(li)) 
